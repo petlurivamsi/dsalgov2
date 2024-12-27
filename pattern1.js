@@ -29,6 +29,20 @@ const equilateralTriangle = (rows) => {
   }
 };
 
+const invertedEquilateralTriangle = (rows) => {
+  for (let i = 0; i < rows; i++) {
+    let line = "";
+    for (let j = 0; j < i; j++) {
+      line += " ";
+    }
+    for (let k = 0; k < rows - i; k++) {
+      line += `*`;
+      line += " ";
+    }
+    console.log(line);
+  }
+};
+
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -47,7 +61,7 @@ rl.question("Enter the number of rows for the star patterns", (input) => {
   const rows = parseInt(input, 10);
   //   printStarPattern(rows);
   //   invertedRightAngleTriangle(rows);
-  equilateralTriangle(rows);
+  invertedEquilateralTriangle(rows);
 
   rl.close();
 });
